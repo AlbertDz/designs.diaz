@@ -1,0 +1,11 @@
+.banner { cursor: crosshair; }
+
+i {
+	background: url(../assets/hole.png);
+	height: 38px;
+	position: absolute;
+	pointer-events: none;
+	transform: translate(-21px, -19px);
+	width: 40px;
+	z-index: 1001;
+}
