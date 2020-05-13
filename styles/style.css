@@ -18,6 +18,7 @@
 body, html {
 	font-family: sans-serif;
 	font-size: 16px;
+	overflow-x: hidden;
 }
 
 * {
@@ -26,36 +27,57 @@ body, html {
 	padding: 0;
 }
 
+footer {
+	font-size: .8em;
+	position: fixed;
+	right: 50px;
+	bottom: 20px;
+	z-index: 900;
+}
 
 .banner {
 	background: url(../assets/bg.jpg);
 	background-position: 0 -70px;
+	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
-	position: relative;
-	width: 100%;
+	left: 0;
+	padding-top: 165px;
+	position: absolute;
+	top: 0;
+	width: 100vw;
 }
 
 .bg-games {
 	background: url(../assets/bg-games.jpg);
+	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
+.bg-histories {
+	background: url(../assets/bg-histories.jpg), linear-gradient(0deg, #fff, transparent);
+	background-blend-mode: screen;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 100% 180%;
+}
+
 .banner .description {
-	align-items: flex-end;
+	align-items: center;
 	display: flex;
 	height: 100%;
 	justify-content: center;
-	padding-bottom: 100px;
+	left: 0;
 	position: absolute;
+	top: 0;
 	width: 100%;
 	z-index: 100;
 }
 
 .banner .description .title-center {
-	font-size: 22px;
+	font-size: 20px;
 	text-align: center;
 	width: 700px;
 }
@@ -66,6 +88,11 @@ body, html {
 	font-family: 'Playball', cursive;
 	margin-bottom: 20px;
 	text-shadow: 1px 1px 2px #000;
+}
+
+.banner .description .title-center p {
+	font-weight: 600;
+	text-shadow: 1px 1px 1px #fff;
 }
 
 .banner .clouds {
@@ -101,7 +128,7 @@ body, html {
 	justify-content: center;
 	position: fixed;
 	width: 100vw;
-	z-index: 1010;
+	z-index: 1000;
 }
 
 .wavy {
@@ -119,6 +146,13 @@ body, html {
 	font-weight: bold;
 	position: relative;
 	text-transform: uppercase;
+}
+
+.wave {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
 }
 
 @keyframes wavy {

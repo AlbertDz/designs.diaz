@@ -5,7 +5,8 @@ nav h1 {
 	font-family: 'Playball', cursive;
 	font-size: 2em;
 	left: 50px;
-	position: absolute;
+	position: fixed;
+	text-shadow: -1px 1px 2px #000;
 	top: 25px;
 	z-index: 100;
 }
@@ -16,9 +17,9 @@ nav .navigation {
 	justify-content: center;
 	left: 50%;
 	position: absolute;
-	top: 40px;
+	top: 20px;
 	transform: translateX(-50%);
-	z-index: 1000;
+	z-index: 110;
 }
 
 nav .navigation li {
@@ -35,14 +36,14 @@ nav .navigation li {
 	width: 100px;
 }
 
-nav .navigation li:hover {
+nav .navigation li:hover, nav .navigation li.active {
 	font-weight: bold;
-	height: 150px;
+	height: 125px;
 	opacity: 1;
-	width: 150px;
+	width: 125px;
 }
 
-nav .navigation li a {
+nav .navigation li a, nav .navigation li span {
 	align-items: center;
 	color: #fff;
 	display: flex;
@@ -54,14 +55,22 @@ nav .navigation li a {
 	width: 100%;
 }
 
-nav .navigation li:nth-child(1) a {
+nav .navigation li:nth-child(1) a, nav .navigation li:nth-child(1) span {
 	background: url(../assets/mini-bg.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
 
-nav .navigation li:nth-child(3) a {
+nav .navigation li:nth-child(3) a, nav .navigation li:nth-child(3) span {
 	background: url(../assets/bg-games.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
+
+nav .navigation li:nth-child(4) a, nav .navigation li:nth-child(4) span {
+	background: url(../assets/bg-histories.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+nav li.active { cursor: default; }

@@ -8,6 +8,6 @@ document.addEventListener('click', e => {
 	bullet.style.left = `${x}px`;
 	bullet.style.top = `${y}px`;
 	body.appendChild(bullet);
-	audio.volume = 0.05;
+	audio.volume = 0.1;
 	audio.play();
 })
