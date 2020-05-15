@@ -35,7 +35,7 @@
 
 .card .slider {
 	align-items: flex-start;
-	background-color: #000;
+	background: none;
 	display: flex;
 	height: 350px;
 	justify-content: center;
@@ -44,11 +44,53 @@
 	width: 100%;
 }
 
+.card .slider img {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
 .card .slider h2 {
 	color: #fff;
-	font-size: 2.5em;
+	font-size: 2em;
 	text-align: center;
+	z-index: 10;
 }
 
 .swiper-wrapper { padding-bottom: 100px; }
 .swiper-slide { width: 400px; }
+
+/*Responsive*/
+
+@media screen and (max-width:768px) {
+
+	.card {
+		height: 400px;
+		width: 300px;
+	}
+
+	.card .content {
+		font-size: .9em;
+		padding: 15px;
+		width: 300px;
+	}
+
+	.card .content a {
+		font-weight: 600;
+		margin: 10px 0 0;
+		padding: 5px 10px;
+	}
+
+	.card .slider {
+		height: 250px;
+		padding: 20px 5px;
+	}
+
+	.card .slider h2 { font-size: 1.5em; }
+	.swiper-wrapper { padding-bottom: 100px; }
+	.swiper-slide { width: 300px; }
+}
+
+@media screen and (min-width:480px) {}

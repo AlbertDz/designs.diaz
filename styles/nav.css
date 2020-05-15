@@ -1,14 +1,17 @@
 @import 'style.css';
 
 nav h1 {
+	bottom: 20px;
 	color: #fff;
 	font-family: 'Playball', cursive;
 	font-size: 2em;
 	left: 50px;
 	position: fixed;
-	text-shadow: -1px 1px 2px #000;
-	top: 25px;
 	z-index: 100;
+
+	background: linear-gradient(125deg, blue, red);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 nav .navigation {
@@ -74,3 +77,26 @@ nav .navigation li:nth-child(4) a, nav .navigation li:nth-child(4) span {
 }
 
 nav li.active { cursor: default; }
+
+/*Responsive*/
+
+@media screen and (max-width:768px) {
+
+	nav h1 {
+		font-size: 1.7em;
+		left: 30px;
+	}
+
+	nav .navigation li {
+		font-size: .8em;
+		height: 80px;
+		width: 80px;
+	}
+
+	nav .navigation li:hover, nav .navigation li.active {
+		height: 105px;
+		width: 105px;
+	}
+}
+
+@media screen and (min-width:480px) {}

@@ -28,16 +28,16 @@ body, html {
 }
 
 footer {
+	bottom: 20px;
 	font-size: .8em;
 	position: fixed;
 	right: 50px;
-	bottom: 20px;
 	z-index: 900;
 }
 
 .banner {
 	background: url(../assets/bg.jpg);
-	background-position: 0 -70px;
+	background-position: center;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -52,16 +52,16 @@ footer {
 .bg-games {
 	background: url(../assets/bg-games.jpg);
 	background-attachment: fixed;
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 .bg-histories {
-	background: url(../assets/bg-histories.jpg), linear-gradient(0deg, #fff, transparent);
-	background-blend-mode: screen;
+	background: url(../assets/bg-histories.jpg);
 	background-attachment: fixed;
+	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 100% 180%;
 }
 
 .banner .description {
@@ -84,10 +84,15 @@ footer {
 
 .banner .description .title-center h1 {
 	color: #fff;
+	display: inline;
 	font-size: 5em;
 	font-family: 'Playball', cursive;
 	margin-bottom: 20px;
-	text-shadow: 1px 1px 2px #000;
+	padding: 5px 10px;
+
+	background: linear-gradient(125deg, blue, red);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .banner .description .title-center p {
@@ -155,6 +160,8 @@ footer {
 	width: 100%;
 }
 
+/*Animaciones*/
+
 @keyframes wavy {
 	0%, 40%, 100% { transform: translateY(0px); }
 	20% { transform: translateY(-20px); }
@@ -164,3 +171,13 @@ footer {
 	0% { transform: translateX(-100%); }
 	100% { transform: translateX(100%); }
 }
+
+/*Responsive*/
+
+@media screen and (max-width:768px) {
+	footer { right: 30px; }
+	.banner .description .title-center h1 { font-size: 3em; }
+	.banner .description .title-center p { font-weight: 400; }
+}
+
+@media screen and (min-width:480px) {}
