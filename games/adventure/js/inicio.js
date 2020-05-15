@@ -1,6 +1,7 @@
 let inicio = {
 	iniciarJuego: () => {
 		console.log('Juego Iniciado');
+		ajax.cargarArchivo('mapas/prueba.json');
 		teclado.iniciar();
 		dimensiones.iniciar();
 		mando.iniciar();

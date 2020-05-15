@@ -17,6 +17,7 @@
 	transform-style: preserve-3d;
 	transition: 1s;
 	width: 300px;
+	z-index: 10;
 }
 
 .card:hover {

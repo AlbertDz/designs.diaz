@@ -9,17 +9,18 @@ const games = [
 	{title: 'Titulo 7', img: 'assets/bg-games.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', url: '#'},
 ];
 
-for (let i=0; i < 7; i++) {
-	swiperWrapper.insertAdjacentHTML('beforeend', `<div class="swiper-slide">
-													<div class="card">
-														<div class="slider">
-															<img src="${games[i].img}">
-															<h2>${games[i].title}</h2>
-														</div>
-														<div class="content">
-															<p>${games[i].description}</p>
-															<a href="${games[i].url}">Jugar</a>
-														</div>
-													</div>
-												</div>`);
-}
+games.map(game => {
+	swiperWrapper.insertAdjacentHTML('beforeend',
+		`<div class="swiper-slide">
+			<div class="card">
+				<div class="slider">
+					<img src="${game.img}">
+					<h2>${game.title}</h2>
+				</div>
+				<div class="content">
+					<p>${game.description}</p>
+					<a href="${game.url}">Jugar</a>
+				</div>
+			</div>
+		</div>`);
+});

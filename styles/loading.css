@@ -1,0 +1,32 @@
+.loading {
+	align-items: center;
+	background-color: #fff;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	position: fixed;
+	width: 100vw;
+	z-index: 1000;
+}
+
+.wavy {
+	position: relative;
+	-webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0,0,0,.4));
+}
+
+.wavy span {
+	animation: loading 1.5s ease-out infinite;
+	animation-delay: calc(0.1s * var(--i));
+	color: #000;
+	display: inline-block;
+	font-size: 2em;
+	font-weight: bold;
+	position: relative;
+	text-transform: uppercase;
+}
+
+
+@keyframes loading {
+	0%, 40%, 100% { transform: translateY(0px); }
+	20% { transform: translateY(-20px); }
+}

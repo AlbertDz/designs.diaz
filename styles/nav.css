@@ -26,7 +26,7 @@ nav .navigation {
 }
 
 nav .navigation li {
-	background-color: #fff;
+	background: linear-gradient(125deg, blue, red);
 	border-radius: 4px;
 	cursor: pointer;
 	display: inline-block;
@@ -79,7 +79,6 @@ nav .navigation li:nth-child(4) a, nav .navigation li:nth-child(4) span {
 nav li.active { cursor: default; }
 
 /*Responsive*/
-
 @media screen and (max-width:768px) {
 
 	nav h1 {
