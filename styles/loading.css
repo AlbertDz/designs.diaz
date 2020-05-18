@@ -23,6 +23,10 @@
 	font-weight: bold;
 	position: relative;
 	text-transform: uppercase;
+
+	background: linear-gradient(180deg, blue, red);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 

@@ -1,6 +1,6 @@
 let swiperWrapper = document.querySelector('.swiper-wrapper');
 const games = [
-	{title: 'Adventure', img: 'assets/bg.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', url: 'games/adventure/index.html'},
+	// {title: 'Adventure', img: 'assets/bg.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', url: 'games/adventure/index.html'},
 	{title: 'Titulo 2', img: 'assets/bg-games.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', url: '#'},
 	{title: 'Titulo 3', img: 'assets/bg-histories.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', url: '#'},
 	{title: 'Titulo 4', img: 'assets/bg.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', url: '#'},

@@ -32,7 +32,7 @@ footer {
 	font-size: .8em;
 	position: fixed;
 	right: 50px;
-	z-index: 900;
+	z-index: 1001;
 }
 
 .banner {
