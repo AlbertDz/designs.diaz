@@ -18,7 +18,7 @@
 
 	<link rel="stylesheet" href="styles/swiper.min.css">
 	<link rel="stylesheet" href="styles/style.css">
-	<link rel="stylesheet" href="styles/games.css">
+	<link rel="stylesheet" href="styles/games/games.css">
 </head>
 <body>
 	<script src="js/load.js"></script>
@@ -44,12 +44,23 @@
 		</div>
 
 		<div class="shadow-white"></div>
+
+		<section class="sections">
+			<h2>Proximos Estrenos</h2>
+			<div class="content-games" id="proximamente"></div>
+		</section>
+
+		<section class="sections">
+			<h2>Juegos</h2>
+			<div class="content-games" id="todos"></div>
+		</section>
 	</div>
 
 	<footer>Design Diaz 2020 &copy | Todos los derechos reservados</footer>
 
 	<script type="text/javascript" src="js/nav.js"></script>
-	<script src="js/games.js"></script>
+	<script type="text/javascript" src="js/games/list-games.js"></script>
+	<script src="js/games/games.js"></script>
 	<script src="js/swiper.min.js"></script>
 	<script>
 	    var swiper = new Swiper('.swiper-container', {
@@ -66,10 +77,10 @@
 	     	},
 	     	loop: true,
 	     	// autoplay: {
-	     	// 	delay: 3000,
+	     	// 	delay: 20000,
 	     	// 	disableOnInteraction: false
 	     	// }
 	    });
-	 </script>
+	</script>
 </body>
 </html>

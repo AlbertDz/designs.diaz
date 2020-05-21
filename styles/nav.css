@@ -4,7 +4,7 @@ nav {
 	position: fixed;
 	top: 20px;
 	width: 100vw;
-	z-index: 110;
+	z-index: 900;
 }
 
 nav h1 {
@@ -96,12 +96,15 @@ nav > span {
 	align-items: center;
 	background-color: #fff;
 	border-radius: 50%;
+	box-shadow: 0 0 2px #888,
+				0 0 5px #888;
 	color: #888;
 	cursor: pointer;
 	display: flex;
 	font-size: 1.5em;
 	height: 40px;
 	justify-content: center;
+	opacity: 0;
 	position: absolute;
 	right: 20px;
 	top: 20px;
@@ -110,7 +113,16 @@ nav > span {
 	z-index: 900;
 }
 
-nav.show > span { transform: rotate(135deg); }
+nav > span:hover {
+	box-shadow: 0 0 2px #888,
+				0 0 5px #888,
+				0 0 10px #888;
+	transform: translateY(-1px);
+}
+
+nav.show > span {
+	transform: rotate(135deg);
+}
 
 /*Responsive*/
 @media screen and (max-width:768px) {

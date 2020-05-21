@@ -90,7 +90,6 @@ footer {
 	font-family: 'Playball', cursive;
 	margin-bottom: 20px;
 	padding: 5px 10px;
-
 	background: linear-gradient(125deg, blue, red);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
