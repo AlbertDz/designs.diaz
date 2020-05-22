@@ -98,9 +98,6 @@ window.addEventListener('load', e => {
 
 				inicio.actual.classList.add('click')
 				inicio.iniciarJuego();
-
-			} else {
-				console.log('Salir')
 			}
 
 			inicio.actual = document.querySelector('.click');
