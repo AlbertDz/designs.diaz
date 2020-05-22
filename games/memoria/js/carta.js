@@ -1,6 +1,7 @@
 const carta = {
 	crearCartas: () => {
 		let tablero = document.getElementById('tablero');
+		tablero.innerHTML = '';
 
 		cartas.todasCartas.map(carta => {
 			tablero.insertAdjacentHTML('beforeend', 

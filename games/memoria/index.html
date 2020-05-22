@@ -20,30 +20,36 @@
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body>
-
 	<div class="content">
-		<img src="tableros/1.jpg">
+		<img id="background-tablero" src="tableros/1.jpg">
 
 		<div class="controles">
 			<div class="botones">
-				<button id="facil">Fácil</button>
-				<button id="medio">Medio</button>
-				<button id="dificil">Difícil</button>
-				<button id="reiniciar">Reiniciar</button>
+				<button class="control click">Fácil</button>
+				<button class="control">Medio</button>
+				<button class="control">Difícil</button>
+				<button class="control">Reiniciar</button>
 			</div>
 
 			<ul class="select-tablero">
 				<li class="img-tablero"><img src="tableros/1.jpg"></li>
-				<li class="img-tablero"><img src="tableros/1.jpg"></li>
-				<li class="img-tablero"><img src="tableros/1.jpg"></li>
-				<li class="img-tablero"><img src="tableros/1.jpg"></li>
-				<li class="img-tablero"><img src="tableros/1.jpg"></li>
+				<li class="img-tablero"><img src="tableros/2.jpg"></li>
+				<li class="img-tablero"><img src="tableros/3.jpg"></li>
+				<li class="img-tablero"><img src="tableros/4.jpg"></li>
+				<li class="img-tablero"><img src="tableros/5.jpg"></li>
 			</ul>
 
-			<a href="../../games.html" class="salir">Salir</a>
+			<a href="../../games.html" class="salir" class="control">Salir</a>
 		</div>
 		<div id="tablero"></div>
 	</div>
+
+	<span id="pop-up-fondo">
+		<p id="pop-up-mensaje">
+			¡Felicidades has encontrado todas las parejas!
+			<span id="pop-up-close">x</span>
+		</p>
+	</span>
 
 	<script type="text/javascript" src="js/icon.js"></script>
 	<script type="text/javascript" src="js/cartas.js"></script>

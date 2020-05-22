@@ -1,7 +1,10 @@
 const cartas = {
 	todasCartas: new Array(),
+	cantParejas: 15,
 	contenidoCartas: () => {
-		for (c = 0; c < 15; c++) {
+		cartas.todasCartas = new Array();
+
+		for (c = 0; c < cartas.cantParejas; c++) {
 			const cant = icon.icons.length - 1;
 			const valor = Math.ceil(Math.random() * cant);
 
