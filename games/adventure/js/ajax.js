@@ -1,11 +1,11 @@
 let ajax = {
-	cargarArchivo: ruta => {
+	cargarArchivo: (ruta, manipularDatos) => {
 		let peticion = new XMLHttpRequest();
 
 		peticion.onreadystatechange = () => {
 			if (peticion.readyState === XMLHttpRequest.DONE) {
 				if (peticion.status === 200) {
-					console.log(JSON.parse(peticion.responseText))
+					manipularDatos(JSON.parse(peticion.responseText));
 				} else if (peticion.status === 400) {
 					console.log('Error');
 				} else {

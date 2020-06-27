@@ -22,7 +22,7 @@ body.insertAdjacentHTML('afterbegin',
 	</div>`
 );
 
-window.addEventListener('load', function(){
+document.addEventListener('DOMContentLoaded', () => {
 	let loading = document.querySelector('.loading');
 	
     loading.style.display = 'none';

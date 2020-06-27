@@ -5,16 +5,15 @@ let todos = document.getElementById('todos');
 listGames.top.map(game => {
 	swiperWrapper.insertAdjacentHTML('beforeend',
 		`<div class="swiper-slide">
-			<div class="card">
+			<a class="card" href="${game.url}">
 				<div class="slider">
 					<img src="${game.img}">
 					<h2>${game.title}</h2>
 				</div>
 				<div class="content">
 					<p>${game.desc}</p>
-					<a href="${game.url}">Jugar</a>
 				</div>
-			</div>
+			</a>
 		</div>`);
 })
 

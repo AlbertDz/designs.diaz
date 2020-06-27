@@ -67,7 +67,9 @@ window.addEventListener('load', e => {
 
 	const imgTablero = document.getElementById('background-tablero'); 
 	const tableros = document.getElementsByClassName('img-tablero');
-	const control = document.getElementsByClassName('control');
+	const control = document.getElementById('control')
+	const cambiarParejas = document.getElementById('cambiar-parejas');
+	const enviar = document.getElementById('enviar');
 
 	for (i = 0; i < tableros.length; i++) {
 		tableros[i].addEventListener('click', e => {
@@ -75,32 +77,24 @@ window.addEventListener('load', e => {
 		})
 	}
 
-	for (i = 0; i < control.length; i++) {
-		control[i].addEventListener('click', e => {
-			inicio.actual.classList.remove('click');
+	control.addEventListener('click', e => {
+		e.target.classList.add('click');
 
-			e.target.classList.add('click');
+		setTimeout(() => e.target.classList.remove('click'), 500)
 
-			if (e.target === control[0]) {
-				inicio.parejas(15);
-				inicio.iniciarJuego();
+		inicio.iniciarJuego();
+	})
 
-			} else if (e.target === control[1]) {	
-				inicio.parejas(20);
-				inicio.iniciarJuego();
+	cambiarParejas.addEventListener('submit', e => {
+		e.preventDefault();
 
-			} else if (e.target === control[2]) {	
-				inicio.parejas(25);
-				inicio.iniciarJuego();
+		inicio.parejas(e.target[0].value);
+		inicio.iniciarJuego();
+	})
 
-			} else if (e.target === control[3]) {	
-				setTimeout(() => e.target.classList.remove('click'), 500)
+	enviar.addEventListener('click', e => {
+		e.target.classList.add('click');
 
-				inicio.actual.classList.add('click')
-				inicio.iniciarJuego();
-			}
-
-			inicio.actual = document.querySelector('.click');
-		})
-	}
+		setTimeout(() => e.target.classList.remove('click'), 500)
+	})
 })

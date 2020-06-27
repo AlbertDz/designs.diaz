@@ -1,7 +1,10 @@
+.banner { height: 600px; }
+
 .container {
 	align-items: center;
 	background: none;
 	display: flex;
+	height: 100vh;
 	justify-content: center;
 	padding-top: 30px;
 	width: 100vw;
@@ -10,11 +13,16 @@
 .container .card {
 	background-color: #fff;
 	box-shadow: 0 20px 10px rgba(0,0,0,.3);
-	cursor: default;
+	cursor: pointer;
 	height: 500px;
 	position: relative;
 	width: 400px;
+	text-decoration: none;
+	color: #000;
+	display: inline-block;
 }
+
+.container .card:visited { color: #000; }
 
 .container .card .content {
 	box-sizing: border-box;

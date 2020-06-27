@@ -1,6 +1,6 @@
 const cartas = {
 	todasCartas: new Array(),
-	cantParejas: 15,
+	cantParejas: 10,
 	contenidoCartas: () => {
 		cartas.todasCartas = new Array();
 

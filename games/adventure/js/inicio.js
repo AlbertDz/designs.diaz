@@ -1,21 +1,16 @@
 let inicio = {
+	iniciadores: [
+		maquinaEstados.iniciar(),
+		teclado.iniciar(),
+		mando.iniciar(),
+		buclePrincipal.iterar()
+	],
 	iniciarJuego: () => {
-		console.log('Juego Iniciado');
-		ajax.cargarArchivo('mapas/prueba.json');
-		teclado.iniciar();
-		dimensiones.iniciar();
-		mando.iniciar();
-		inicio.recargarTiles();
-		buclePrincipal.iterar();
+		inicio.encadenarInicios(inicio.iniciadores.shift());
 	},
-	recargarTiles: () => {
-		document.getElementById('juego').innerHTML = '';
-
-		for (let y = 0; y < dimensiones.obtenerTilesVerticales(); y++) {
-			for (let x = 0; x < dimensiones.obtenerTilesHorizontales(); x++) {
-				let r = new Rectangulo(x * dimensiones.ladoTiles, y * dimensiones.ladoTiles,
-										dimensiones.ladoTiles, dimensiones.ladoTiles);
-			}
+	encadenarInicios: iniciador => {
+		if (iniciador) {
+			iniciador(() => inicio.encadenarInicios(iniciadores.shift()))
 		}
 	}
 };

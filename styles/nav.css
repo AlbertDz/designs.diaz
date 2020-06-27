@@ -90,6 +90,12 @@ nav .navigation li:nth-child(4) a, nav .navigation li:nth-child(4) span {
 	background-size: 100% 100%;
 }
 
+nav .navigation li:nth-child(6) a, nav .navigation li:nth-child(6) span {
+	background: url(../assets/bg-contacto.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
 nav li.active { cursor: default; }
 
 nav > span {

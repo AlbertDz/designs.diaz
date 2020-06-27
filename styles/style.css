@@ -96,8 +96,9 @@ footer {
 }
 
 .banner .description .title-center p {
-	font-weight: 600;
-	text-shadow: 1px 1px 1px #fff;
+	color: #fff;
+	font-size: 22px;
+	text-shadow: 0px 2px 5px #000;
 }
 
 .banner .clouds {
@@ -135,7 +136,6 @@ footer {
 @media screen and (max-width:768px) {
 	footer { right: 30px; }
 	.banner .description .title-center h1 { font-size: 3em; }
-	.banner .description .title-center p { font-weight: 400; }
 }
 
 @media screen and (min-width:480px) {}
