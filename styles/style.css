@@ -133,9 +133,16 @@ footer {
 }
 
 /*Responsive*/
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
 	footer { right: 30px; }
 	.banner .description .title-center h1 { font-size: 3em; }
 }
 
-@media screen and (min-width:480px) {}
+@media screen and (max-width: 650px) {
+	footer {
+		left: 0;
+		text-align: center;
+		width: 100%;
+		z-index: 800;
+	}
+}

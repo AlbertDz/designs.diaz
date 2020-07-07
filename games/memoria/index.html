@@ -23,19 +23,19 @@
 <body>
 	<script type="text/javascript" src="../../js/load.js"></script>
 
-	<div class="content">
+	<div class="content" id="contenido">
 		<h1>MEMORIA</h1>
 		<img id="background-tablero" src="tableros/1.jpg">
 
 		<div class="controles">
-			<div class="botones">
-				<p class="mensaje">Parejas, Min: 10, Max: 50</p>
-				<form id="cambiar-parejas">
-					<input type="number" value="10" min="10" max="50">
-					<input type="submit" value="OK" id="enviar">
-				</form>
-				<button id="control">Reiniciar</button>
-			</div>
+			<a href="../../games.html" class="salir" title="Salir"><i class="fa fa-sign-out-alt"></i></a>
+
+			<form id="cambiar-parejas">
+				<input type="number" value="10" min="10" max="50">
+				<button id="enviar" title="Aceptar"><i class="fa fa-check"></i></button>
+			</form>
+
+			<button id="control" title="Reiniciar"><i class="fa fa-undo"></i></button>
 
 			<ul class="select-tablero">
 				<li class="img-tablero"><img src="tableros/1.jpg"></li>
@@ -44,8 +44,6 @@
 				<li class="img-tablero"><img src="tableros/4.jpg"></li>
 				<li class="img-tablero"><img src="tableros/5.jpg"></li>
 			</ul>
-
-			<a href="../../games.html" class="salir">Salir</a>
 		</div>
 		<div id="tablero"></div>
 	</div>

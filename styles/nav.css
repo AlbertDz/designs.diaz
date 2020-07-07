@@ -101,9 +101,8 @@ nav li.active { cursor: default; }
 nav > span {
 	align-items: center;
 	background-color: #fff;
+	border: thin solid #ccc;
 	border-radius: 50%;
-	box-shadow: 0 0 2px #888,
-				0 0 5px #888;
 	color: #888;
 	cursor: pointer;
 	display: flex;
@@ -119,19 +118,12 @@ nav > span {
 	z-index: 900;
 }
 
-nav > span:hover {
-	box-shadow: 0 0 2px #888,
-				0 0 5px #888,
-				0 0 10px #888;
-	transform: translateY(-1px);
-}
-
 nav.show > span {
 	transform: rotate(135deg);
 }
 
 /*Responsive*/
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
 
 	nav h1 {
 		font-size: 1.7em;
@@ -150,4 +142,82 @@ nav.show > span {
 	}
 }
 
-@media screen and (min-width:480px) {}
+@media screen and (max-width: 650px) {
+	nav {
+		height: 100%;
+		left: 0;
+		top: 0;
+		transition: .1s;
+		width: 0;
+	}
+
+	nav.show { width: 250px; }
+
+	nav.show::before {
+		background-color: rgba(0,0,0,.5);
+		content: "";
+		height: 100%;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+	}
+
+	nav .navigation {
+		background-color: #fff;
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 1;
+		overflow-x: hidden;
+		overflow-y: auto;
+		transform: translateX(-250px);
+		transition: .3s;
+		visibility: visible;
+	}
+
+	nav.show .navigation { transform: translateX(0); }
+
+	nav .navigation li, nav .navigation li:hover {
+		border-radius: 0;
+		background: #fff;
+		font-size: 16px;
+		font-weight: bold;
+		height: 60px;
+		margin: 0;
+		width: 100%;
+	}
+
+	nav .navigation li.active {
+		height: 180px;
+		width: 100%;
+	}
+
+	nav > span {
+		border: thin solid #ccc;
+		box-shadow: none;
+		left: 10px;
+		opacity: 1;
+		position: fixed;
+		top: 10px;
+	}
+
+	nav > span:hover {
+		box-shadow: none;
+		transform: translateY(0);
+	}
+
+	nav.show > span {
+		transform: rotate(135deg);
+	}
+
+	nav h1 {
+		height: max-content;
+		left: calc(100% - 20px);
+		top: 10px;
+		transform: translateX(-100%);
+		width: max-content;
+		z-index: -1;
+	}
+}

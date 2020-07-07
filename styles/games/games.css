@@ -85,6 +85,7 @@
 	width: 100%;
 	z-index: -1;
 }
+
 .sections h2 {
 	border-bottom: thin solid #ccc;
 	font-size: 2em;
@@ -157,33 +158,117 @@
 .swiper-slide { width: 400px; }
 
 /*Responsive*/
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
 
-	.card {
+	.container .card {
 		height: 400px;
 		width: 300px;
 	}
 
-	.card .content {
+	.container .card .content {
 		font-size: .9em;
 		padding: 15px;
 		width: 300px;
 	}
 
-	.card .content a {
+	.container .card .content a {
 		font-weight: 600;
 		margin: 10px 0 0;
 		padding: 5px 10px;
 	}
 
-	.card .slider {
+	.container .card .slider {
 		height: 250px;
 		padding: 20px 5px;
 	}
 
-	.card .slider h2 { font-size: 1.5em; }
+	.container .card .slider h2 { font-size: 1.5em; }
 	.swiper-wrapper { padding-bottom: 100px; }
 	.swiper-slide { width: 300px; }
 }
 
-@media screen and (min-width:480px) {}
+@media screen and (max-width: 650px) {
+	.banner {
+		max-height: 400px;
+		min-height: 100%; 
+		padding-top: 0;
+	}
+
+	.container .card {
+		height: 300px;
+		width: 250px;
+	}
+
+	.container .card .content {
+		font-size: 12px;
+		padding: 10px;
+		width: 250px;
+	}
+
+	.container .card .slider { height: 200px; }
+
+	.swiper-wrapper { padding-bottom: 50px; }
+	.swiper-slide { width: 250px; }
+}
+
+@media screen and (max-width: 480px) {
+	.banner {
+		max-height: 300px;
+		min-height: 100%; 
+		padding-top: 0;
+	}
+
+	.container .card {
+		height: 200px;
+		width: 150px;
+	}
+
+	.container .card .content {
+		font-size: 10px;
+		padding: 5px;
+		width: 150px;
+	}
+
+	.container .card .slider {
+		height: 100px;
+		padding: 10px 5px;
+	}
+
+	.container .card .slider h2 { font-size: 16px; }
+
+	.swiper-wrapper { padding-bottom: 30px; }
+	.swiper-slide { width: 150px; }
+
+	.sections { padding: 20px 10px; }
+
+	.sections h2 { font-size: 18px; }
+
+	.sections .content-games .card {
+		height: 200px;
+		margin: 0;
+		margin-right: 5px;
+		width: 150px;
+	}
+
+	.sections .content-games .card .description {
+		--altura: calc(14px + 10px);
+		height: var(--altura);
+		padding: 5px;
+		top: calc(200px - var(--altura));
+		width: 140px;
+	}
+
+	.sections .content-games .card .description:hover {
+		height: 190px;
+		top: 10px;
+	}
+
+	.sections .content-games .card .description h3 { font-size: 12px; }
+
+	.sections .content-games .card .description p { font-size: 10px; }
+
+	.sections .content-games .card .description a {
+		font-size: 10px;
+		margin-top: 10px;
+	}
+}

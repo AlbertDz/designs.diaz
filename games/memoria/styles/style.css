@@ -1,23 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
 
-body {
-	align-items: center;
-	background-color: rgb(200,200,200);
-	display: flex;
-	justify-content: center;
-	padding: 5px;
+body { background-color: rgb(200,200,200); }
+
+::-webkit-scrollbar {
+  background: none;
+  height: 8px;
+  width: 8px;
 }
 
-* { font-family: 'Squada One', serif; }
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(0deg, red, blue);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-track { background: none; }
+
+* {
+	border: 0;
+	font-family: 'Squada One', serif;
+	margin: 0;
+	padding: 0;
+}
 
 .loading { background-color: rgb(200,200,200); }
 
-.botones {
-	display: inline-block;
-	width: 200px;
-}
-
-.botones button, .salir, input {
+#control, .salir, input, #enviar {
 	background-color: blue;
 	border: 3px solid #ccc;
 	border-radius: 25px;
@@ -32,10 +39,18 @@ body {
 	outline: none;
 	position: relative;
 	transition: .3s;
-	width: 100%;
 }
 
-.botones button:after, form input[type=submit]:after {
+#control, .salir, #enviar {
+	align-items: center;
+	display: flex;
+	font-size: 24px;
+	justify-content: center;
+	padding: 0;
+	width: 50px;
+}
+
+#control:after, #enviar:after {
 	background: none;
 	border-radius: 25px;
 	box-shadow: 0 2px 5px #888;
@@ -47,30 +62,21 @@ body {
 	width: 100%;
 }
 
-.botones button.click, form input[type=submit].click {
-	box-shadow: 0 2px 10px #000 inset;
-	font-size: 1.9em;
-}
-.botones button.click:after, form input[type=submit]:after { box-shadow: none; }
+#control.click, #enviar.click { box-shadow: 0 2px 10px #000 inset; }
+
+#control.click:after, #enviar:after { box-shadow: none; }
 
 .content {
-	align-items: flex-start;
 	background: none;
-	border: 3px solid #ccc;
-	box-shadow: 0 0 10px #000 inset,
-				0 0 10px #000;
-	border-radius: 8px;
-	display: flex;
+	box-sizing: border-box;
+	display: inline-block;
 	height: 100%;
-	justify-content: space-between;
-	padding: 5px;
-	padding-left: 20px;
-	position: relative;
+	padding-top: 75px;
+	position: fixed;
 	width: 100%;
 }
 
 .content > img {
-	border-radius: 8px;
 	height: 100%;
 	left: 0;
 	position: absolute;
@@ -81,37 +87,40 @@ body {
 
 .content h1 {
 	color: rgba(0,0,0,.6);
-	font-size: 220px;
+	font-size: 10vw;
 	left: 50%;
 	position: absolute;
-	top: 0;
-	transform: translateX(-50%);
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
 	z-index: 0;
 }
 
 #tablero {
+	align-items: center;
 	background: none;
+	display: grid;
+	grid-gap: 10px;
+	justify-content: center;
+	overflow-y: auto;
+	padding: 5px;
 	position: relative;
-	text-align: right;
 	transition: .3s;
 }
 
-#tablero .carta, #tablero .carta .fa, #tablero .carta .back {
+.carta, .carta .fa, .carta .back {
 	border-radius: 2px;
 	box-sizing: border-box;
 	display: inline-block;
-	height: 100px;
-	width: 100px;
 }
 
-.fa, .back {
+.carta .fa, .back {
   	backface-visibility: hidden;
   	left: 0;
   	position: absolute;
   	top: 0;
 }
 
-.fa {
+.carta .fa {
 	align-items: center;
 	background-color: rgb(245,245,245);
 	box-shadow: 0 5px 3px #000,
@@ -120,7 +129,6 @@ body {
 	color: blue;
 	display: flex;
 	justify-content: center;
-	padding-top: 10px;
 	text-align: center;
 	text-shadow: 0 8px 5px #888,
 				 0 10px 15px #ccc;
@@ -132,9 +140,10 @@ body {
 
 .back {
 	background: url(../../../assets/logoDesignsDiaz.png), rgb(100,100,100);
-	background-repeat: no-repeat;
-	background-position: center;
 	background-blend-mode: screen;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 50%;
 	box-shadow: 0 5px 3px #000,
 				0 5px 6px #000,
 				0 2px 5px #fff inset;
@@ -146,8 +155,6 @@ body {
 
 .carta {
 	cursor: pointer;
-	font-size: 65px;
-	margin: 10px;
 	position: relative;
 	z-index: 100;
 }
@@ -157,28 +164,39 @@ body {
 .carta.activa .back { transform: rotateY(180deg); }
 
 .controles {
-	display: inline-block;
-	margin-right: 20px;
-	width: 200px;
-	z-index: 1;
+	background: linear-gradient(125deg, blue, red);
+	box-shadow: 0 0 10px 1px #000;
+	box-sizing: border-box;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: 50px 200px 50px auto;
+	height: 70px;
+	left: 0;
+	padding: 0 10px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
 }
 
 .salir {
 	background-color: red;
 	box-sizing: border-box;
-	padding: 5px 25px 0;
-	text-align: center;
 	text-decoration: none;
-	width: 200px;
 }
 
 .select-tablero {
 	display: inline-block;
-	height: 250px;
+	height: 50px;
 	list-style: none;
-	margin: 25px 0;
+	margin: 0;
+	margin-top: 10px;
+	overflow: hidden;
 	padding: 0;
+	transition: height .3s ease;
 }
+
+.select-tablero:hover { height: 270px; }
 
 .select-tablero li {
 	border-radius: 2px;
@@ -241,26 +259,20 @@ body {
 	width: 50px;
 }
 
-form { display: flex; }
-
-form input {
-	box-sizing: border-box;
-	height: 60px;
+form {
+	align-items: center;
+	display: flex;
+	height: 70px;
 }
 
 form input[type=number] {
 	background-color: #fff;
 	box-shadow: 0 2px 10px #000 inset;
 	color: blue;
-	padding: 5px 10px;
+	height: 40px;
+	margin-right: 5px;
 	text-align: center;
-}
-
-form input[type=submit] {
-	border-radius: 50%;
-	margin-left: 5px;
-	min-width: 60px;
-	width: 60px;
+	width: 140px;
 }
 
 .mensaje {
@@ -270,5 +282,74 @@ form input[type=submit] {
 	justify-content: center;
 	margin: 0;
 	margin-top: 10px;
+	padding: 10px;
 	width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+	.controles {
+		grid-gap: 10px;
+		grid-template-columns: 40px 100px 40px;
+		height: 50px;
+		justify-content: center;
+		padding: 0 5px;
+		top: 100%;
+		transform: translateY(-100%);
+	}
+
+	#control, .salir, input, #enviar {
+		border: 1.5px solid #ccc;
+		border-radius: 20px;
+		box-shadow: 0 2px 5px #fff inset,
+					0 -2px 6px #000 inset;
+		font-size: 1em;
+		height: 40px;
+		margin: 5px 0;
+	}
+
+	#control, .salir, #enviar {
+		font-size: 18px;
+		width: 40px;
+	}
+
+	#control:after, #enviar:after {
+		border-radius: 20px;
+		box-shadow: 0 2px 5px #888;
+	}
+
+	#tablero {
+		grid-gap: 5px;
+		height: 100%;
+	}
+
+	.content {
+		padding-bottom: 65px;
+		padding-top: 0;
+	}
+
+	.select-tablero {
+		display: none;
+		height: 40px;
+		margin-top: 5px;
+	}
+
+	.select-tablero:hover { height: 220px; }
+
+	.select-tablero li { height: 40px; }
+
+	form {
+		align-items: center;
+		display: flex;
+		height: 50px;
+	}
+
+	form input[type=number] {
+		background-color: #fff;
+		box-shadow: 0 2px 10px #000 inset;
+		color: blue;
+		height: 35px;
+		margin-right: 5px;
+		text-align: center;
+		width: 50px;
+	}
 }
