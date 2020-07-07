@@ -9,7 +9,7 @@
 	<meta name="apple-mobile-weba-app-status-bar-style" content="black">
 	<meta name="author" content="Designs Diaz">
 
-	<title>Designs Diaz</title>
+	<title>Designs Diaz - Contacto</title>
 
 	<link rel="apple-touch-startup-image" href="assets/logoDesignsDiaz.png">
 	<link rel="shortcut icon" type="image/x-icon" href="assets/logoDesignsDiaz.ico">
@@ -63,30 +63,31 @@
 				</ul>
 			</div>
 			<form class="contactForm">
+				<p id="pop-up">Rellene todos los campos por favor</p>
 				<h2>Enviar Mensaje</h2>
 				<div class="formBox">
 					<div class="inputBox w50">
-						<input type="text" name="nombre" id="nombre" required="">
+						<input type="text" name="nombre" id="nombre" required="" style="border-color: red;">
 						<span>Nombre</span>
 					</div>
 					<div class="inputBox w50">
-						<input type="text" name="apellido" id="apellido" required="">
+						<input type="text" name="apellido" id="apellido" required="" style="border-color: red;">
 						<span>Apellido</span>
 					</div>
 					<div class="inputBox w50">
-						<input type="email" name="correo" id="correo" required="">
+						<input type="email" name="correo" id="correo" required="" style="border-color: red;">
 						<span>Correo</span>
 					</div>
 					<div class="inputBox w50">
-						<input type="text" name="telefono" id="telefono" required="">
+						<input type="text" name="telefono" id="telefono" required="" style="border-color: red;">
 						<span>Teléfono</span>
 					</div>
 					<div class="inputBox w100">
-						<textarea name="mensaje" id="mensaje" required=""></textarea>
+						<textarea name="mensaje" id="mensaje" required="" style="border-color: red;"></textarea>
 						<span>Escriba su mensaje...</span>
 					</div>
 					<div class="inputBox w50">
-						<input type="submit" value="Enviar" id="enviar">
+						<input type="button" value="Enviar" id="enviar">
 					</div>
 				</div>
 			</form>

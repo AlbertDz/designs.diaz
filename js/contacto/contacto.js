@@ -4,15 +4,17 @@ const correo = document.getElementById('correo');
 const telefono = document.getElementById('telefono');
 const mensaje = document.getElementById('mensaje');
 const enviar = document.getElementById('enviar');
+const popUp = document.getElementById('pop-up');
 
 const nombreApellidoValido = e => {
 	if (e.target.value !== '') {
 		let data = e.target.value;
 		let exp = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
 
-		if (!exp.test(data) || data.length<3 || data.length>20) {
-			e.target.focus();
-		}
+		if (!exp.test(data) || data.length<3 || data.length>20)
+			e.target.style.borderColor = 'red';
+		else
+			e.target.style.borderColor = '#777';
 	}
 }
 
@@ -21,16 +23,18 @@ const correoValido = e => {
 		let data = e.target.value;
 		let exp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		
-		if (!exp.test(data) || data.length>50) {
-			e.target.focus();
-		}
+		if (!exp.test(data) || data.length>50)
+			e.target.style.borderColor = 'red';
+		else
+			e.target.style.borderColor = '#777'
 	}
 }
 
-const revisar = e =>{
-	if(e.target.value === ''){
-		e.target.focus();
-	}
+const revisar = e => {
+	if(e.target.value === '')
+		e.target.style.borderColor = 'red';
+	else
+		e.target.style.borderColor = '#777'
 }
 
 const mensajeValido = e => {
@@ -38,32 +42,30 @@ const mensajeValido = e => {
 		let data = e.target.value;
 		let exp = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
 
-		if (data.length<10) {
-			e.target.focus();
-		}
+		if (data.length<10)
+			e.target.style.borderColor = 'red';
+		else
+			e.target.style.borderColor = '#777'
 	}
 }
 
 const enviarCorreo = e => {
-	e.preventDefault();
-
-	console.log(e.target)
-	console.log(this.nombre)
-	console.log(this.apellido)
-	console.log(this.correo)
-	console.log(this.telefono)
-	console.log(this.mensaje)
-}
-
-const validados = () => {
-	
+	if (nombre.style.borderColor === 'red')
+		popUp.style.display = 'block';
+	else if (apellido.style.borderColor === 'red')
+		popUp.style.display = 'block';
+	else if (correo.style.borderColor === 'red')
+		popUp.style.display = 'block';
+	else if (mensaje.style.borderColor === 'red')
+		popUp.style.display = 'block';
+	else {
+		popUp.style.display = 'none';
+		console.log('Datos Enviados');
+	}
 }
 
 const loadDocument = () => {
-	if (validados()) {
-		enviar.enabled();
-		enviar.addEventListener('submit', enviarCorreo);
-	}
+	enviar.addEventListener("click", enviarCorreo);
 
 	nombre.addEventListener("blur", revisar);
 	nombre.addEventListener("blur", nombreApellidoValido);

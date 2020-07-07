@@ -4,6 +4,7 @@ section {
 	display: flex;
 	justify-content: center;
 	min-height: 100vh;
+	padding: 0 20px;
 	padding-top: 50px;
 	position: relative;
 }
@@ -20,9 +21,10 @@ section::before {
 
 section .container {
 	display: flex;
-	min-width: 1100px;
+	max-width: 1100px;
 	min-height: 550px;
 	position: relative;
+	width: 100%;
 	z-index: 100;
 }
 
@@ -35,7 +37,8 @@ section .container .contactinfo {
 	justify-content: space-between;
 	padding: 50px 40px;
 	position: absolute;
-	top: 40px;
+	top: 50%;
+	transform: translateY(-50%);
 	width: 350px;
 	z-index: 1;
 }
@@ -110,6 +113,16 @@ section .container .contactForm {
 	width: calc(100% - 150px);
 }
 
+section .container .contactForm #pop-up {
+	background-color: #f2f2f2;
+	border-radius: 5px;
+	color: red;
+	display: none;
+	margin-bottom: 10px;
+	padding: 5px;
+	text-align: center;
+}
+
 section .container .contactForm h2 {
 	color: #0f3959;
 	font-size: 24px;
@@ -135,7 +148,7 @@ section .container .contactForm .formBox .inputBox.w100 { width: 100%; }
 section .container .contactForm .formBox .inputBox input,
 section .container .contactForm .formBox .inputBox textarea {
 	border: none;
-	border-bottom: 1px solid #777;
+	border-bottom: 1px solid red;
 	color: #333;
 	font-size: 18px;
 	font-weight: 300;
@@ -169,7 +182,7 @@ section .container .contactForm .formBox .inputBox textarea:valid ~ span {
 	transform: translateY(-20px);
 }
 
-section .container .contactForm .formBox .inputBox input[type=submit] {
+section .container .contactForm .formBox .inputBox input[type=button] {
 	background-color: #0f3959;
 	border: none;
 	color: #fff;
@@ -179,4 +192,90 @@ section .container .contactForm .formBox .inputBox input[type=submit] {
 	position: relative;
 }
 
-section .container .contactForm .formBox .inputBox input[type=submit]:hover { background-color: #ff568c; }
+section .container .contactForm .formBox .inputBox input[type=button]:hover { background-color: #ff568c; }
+
+@media screen and (max-width: 768px) {
+	section .container .contactForm {
+		padding-left: 170px;
+		padding-right: 20px;
+	}
+
+	section .container .contactinfo {
+		height: 350px;
+		padding: 20px;
+		width: auto;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	section .container .contactForm h2, section .container .contactinfo h2 { font-size: 18px; }
+
+	section .container .contactinfo .info li span:nth-child(1), section .container .contactinfo .sci li a span { font-size: 20px; }
+
+	section .container .contactinfo .info li span:nth-child(2) { font-size: 14px; }
+
+	section .container .contactForm { padding-left: 110px; }
+
+	section .container .contactForm .formBox .inputBox span { font-size: 12px; }
+
+	section .container .contactForm .formBox .inputBox input, section .container .contactForm .formBox .inputBox textarea { font-size: 16px; }
+
+	section .container .contactForm .formBox .inputBox input[type=button] { padding: 10px; }
+}
+
+@media screen and (max-width: 580px) {
+	section .container { display: grid; }
+
+	section .container .contactinfo {
+		box-shadow: none;
+		height: auto;
+		position: relative;
+		top: 0;
+		transform: translateX(0);
+	}
+
+	section .container .contactForm {
+		height: auto;
+		margin: 10px 0;
+		padding: 20px;
+		position: relative;
+		width: auto;
+	}
+
+	section .container .contactForm h2, section .container .contactinfo h2 { text-align: center; }
+
+	section .container .contactForm .formBox .inputBox:last-child { margin-bottom: 0; }
+
+	section .container .contactinfo .info {
+		display: grid;
+		grid-gap: 20px;
+		grid-template-columns: repeat(auto-fit, 200px);
+		justify-content: center;
+	}
+
+	section .container .contactinfo .info li {
+		display: grid;
+		margin: 0;
+	}
+
+	section .container .contactinfo .info li span:nth-child(1) {
+		margin-bottom: 10px;
+		text-align: center;
+	}
+
+	section .container .contactinfo .info li span:nth-child(2) {
+		margin: 0;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	section {
+		padding: 0;
+		padding-top: 50px;
+	}
+
+	section .container .contactinfo, section .container .contactForm { padding: 10px; }
+
+	section .container .contactinfo .info li span:nth-child(2) { font-size: 12px; }
+}
