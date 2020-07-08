@@ -78,19 +78,25 @@ nav .navigation li:nth-child(1) a, nav .navigation li:nth-child(1) span {
 	background-size: 100% 100%;
 }
 
-nav .navigation li:nth-child(3) a, nav .navigation li:nth-child(3) span {
+nav .navigation li:nth-child(2) a, nav .navigation li:nth-child(2) span {
 	background: url(../assets/bg-games.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
 
-nav .navigation li:nth-child(4) a, nav .navigation li:nth-child(4) span {
+nav .navigation li:nth-child(3) a, nav .navigation li:nth-child(3) span {
 	background: url(../assets/bg-histories.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
 
-nav .navigation li:nth-child(6) a, nav .navigation li:nth-child(6) span {
+nav .navigation li:nth-child(4) a, nav .navigation li:nth-child(4) span {
+	background: url(../assets/bg-servicios.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+nav .navigation li:nth-child(5) a, nav .navigation li:nth-child(5) span {
 	background: url(../assets/bg-contacto.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
