@@ -61,7 +61,7 @@ const inicio = {
 	}
 }
 
-window.addEventListener('load', e => {
+document.addEventListener('DOMContentLoaded', e => {
 	inicio.iniciarJuego();
 	inicio.actual = document.querySelector('.click');
 

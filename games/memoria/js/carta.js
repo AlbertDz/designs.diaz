@@ -3,16 +3,16 @@ const carta = {
 		const cantidadCartas = cartas.todasCartas.length;
 		const ancho = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		const alto = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-		const anchoActual = ancho - 20;
+		const anchoActual = ancho - 10 - (cantidadCartas*20);
 		const altoActual = alto - 100;
-		const filasCartas = parseInt(Math.sqrt(cantidadCartas))
-		const altoAncho = (altoActual/filasCartas)-20;
+		const areaTablero = anchoActual*altoActual;
+		const areaCarta = areaTablero/cantidadCartas;
+		const altoAncho = Math.sqrt(areaCarta);
 		const fontSize = altoAncho - 20;
 
 		let tablero = document.getElementById('tablero');
 		tablero.style.gridTemplateColumns = `repeat(auto-fit, ${altoAncho}px)`;
 		tablero.style.gridTemplateRows = `repeat(auto-fit, ${altoAncho}px)`;
-		// tablero.style.height = `${altoActual}px`;
 		tablero.innerHTML = '';
 
 		cartas.todasCartas.map(carta => {
