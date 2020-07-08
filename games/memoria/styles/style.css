@@ -96,21 +96,21 @@ body { background-color: rgb(200,200,200); }
 }
 
 #tablero {
-	align-items: center;
 	background: none;
-	display: grid;
-	grid-gap: 10px;
-	justify-content: center;
+	display: inline-block;
 	overflow-y: auto;
 	padding: 5px;
 	position: relative;
 	transition: .3s;
+	text-align: center;
 }
 
 .carta, .carta .fa, .carta .back {
 	border-radius: 2px;
 	box-sizing: border-box;
+	font-size: 100px;
 	display: inline-block;
+	margin: 5px;
 }
 
 .carta .fa, .back {
@@ -286,7 +286,40 @@ form input[type=number] {
 	width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+	#pop-up-mensaje, #pop-up-close {
+		font-size: 20px;
+		height: auto;
+		padding: 20px 50px;
+	}
+
+	#pop-up-close {
+		height: 40px;
+		padding: 0;
+		width: 40px;
+	}
+
+	.carta, .carta .fa, .carta .back { font-size: 65px; }
+}
+
 @media screen and (max-width: 480px) {
+	#pop-up-mensaje { margin: 20px; }
+
+	#pop-up-mensaje, #pop-up-close {
+		font-size: 16px;
+		height: auto;
+		padding: 10px 20px;
+	}
+
+	#pop-up-close {
+		height: 35px;
+		padding: 0;
+		right: 0;
+		width: 35px;
+	}
+
+	.carta, .carta .fa, .carta .back { font-size: 30px; }
+
 	.controles {
 		grid-gap: 10px;
 		grid-template-columns: 40px 100px 40px;
