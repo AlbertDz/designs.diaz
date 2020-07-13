@@ -115,9 +115,9 @@ body { background-color: rgb(200,200,200); }
 
 .carta .fa, .back {
   	backface-visibility: hidden;
-  	left: 0;
+  	left: -5px;
   	position: absolute;
-  	top: 0;
+  	top: -5px;
 }
 
 .carta .fa {
