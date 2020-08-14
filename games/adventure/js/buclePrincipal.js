@@ -20,8 +20,8 @@ let buclePrincipal = {
 
 	},
 	actualizar: registroTemporal => {
-		teclado.reiniciar();
 		mando.actualizar();
+		maquinaEstados.actualizar();
 		buclePrincipal.aps++;
 	},
 	dibujar: registroTemporal => {
